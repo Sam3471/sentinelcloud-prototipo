@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  sentinel-app:
+    build: .
+    container_name: sentinelcloud_app
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    restart: always

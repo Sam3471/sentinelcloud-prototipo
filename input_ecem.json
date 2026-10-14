@@ -1,0 +1,76 @@
+{
+    "vulnerabilidades": [
+        {
+            "host": "192.168.100.8",
+            "servicio": "msrpc",
+            "version": null,
+            "puerto": 135,
+            "cve": "N/A",
+            "cvss": 4.0,
+            "descripcion": "Servicio msrpc expuesto en puerto 135"
+        },
+        {
+            "host": "192.168.100.8",
+            "servicio": "netbios-ssn",
+            "version": null,
+            "puerto": 139,
+            "cve": "N/A",
+            "cvss": 4.0,
+            "descripcion": "Servicio netbios-ssn expuesto en puerto 139"
+        },
+        {
+            "host": "192.168.100.8",
+            "servicio": "microsoft-ds",
+            "version": null,
+            "puerto": 445,
+            "cve": "N/A",
+            "cvss": 4.0,
+            "descripcion": "Servicio microsoft-ds expuesto en puerto 445"
+        },
+        {
+            "host": "192.168.100.8",
+            "servicio": "vmrdp",
+            "version": null,
+            "puerto": 2179,
+            "cve": "N/A",
+            "cvss": 4.0,
+            "descripcion": "Servicio vmrdp expuesto en puerto 2179"
+        },
+        {
+            "host": "192.168.100.8",
+            "servicio": "http",
+            "version": "3.1.6",
+            "puerto": 5000,
+            "cve": "CVE-2012-2582",
+            "cvss": 5.0,
+            "descripcion": "Servicio http expuesto en puerto 5000"
+        },
+        {
+            "host": "192.168.100.8",
+            "servicio": "http",
+            "version": "2.0",
+            "puerto": 5357,
+            "cve": "CVE-1999-1457",
+            "cvss": 5.0,
+            "descripcion": "Servicio http expuesto en puerto 5357"
+        },
+        {
+            "host": "192.168.100.8",
+            "servicio": "vnc-http",
+            "version": null,
+            "puerto": 5800,
+            "cve": "N/A",
+            "cvss": 4.0,
+            "descripcion": "Servicio vnc-http expuesto en puerto 5800"
+        },
+        {
+            "host": "192.168.100.8",
+            "servicio": "vnc",
+            "version": null,
+            "puerto": 5900,
+            "cve": "N/A",
+            "cvss": 4.0,
+            "descripcion": "Servicio vnc expuesto en puerto 5900"
+        }
+    ]
+}

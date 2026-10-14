@@ -1,0 +1,412 @@
+Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 http CVE-2012-2582 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+
+Resultados del an�lisis:
+
+192.168.100.8 N/A Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 http CVE-2012-2582 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+
+Resultados del an�lisis:
+
+192.168.100.8 N/A Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 http CVE-2012-2582 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+
+Resultados del an�lisis:
+
+192.168.100.8 N/A Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 http CVE-2012-2582 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+
+Resultados del análisis:
+
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 CVE-2012-2582 → Riesgo: Medio
+192.168.100.8 CVE-1999-1457 → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 50.0 %
+Probabilidad en 2 años: 75.0 %
+Probabilidad en 3 años: 87.5 %
+Probabilidad en 5 años: 96.9 %
+
+Costo potencial estimado:
+Entre $ 12500000 y $ 37500000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 http CVE-2012-2582 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+
+Resultados del análisis:
+
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 CVE-2012-2582 → Riesgo: Medio
+192.168.100.8 CVE-1999-1457 → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 50.0 %
+Probabilidad en 2 años: 75.0 %
+Probabilidad en 3 años: 87.5 %
+Probabilidad en 5 años: 96.9 %
+
+Costo potencial estimado:
+Entre $ 12500000 y $ 37500000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 http CVE-2012-2582 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+
+Resultados del análisis:
+
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 CVE-2012-2582 → Riesgo: Medio
+192.168.100.8 CVE-1999-1457 → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 50.0 %
+Probabilidad en 2 años: 75.0 %
+Probabilidad en 3 años: 87.5 %
+Probabilidad en 5 años: 96.9 %
+
+Costo potencial estimado:
+Entre $ 12500000 y $ 37500000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 http CVE-2012-2582 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+
+Resultados del análisis:
+
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 CVE-2012-2582 → Riesgo: Medio
+192.168.100.8 CVE-1999-1457 → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 50.0 %
+Probabilidad en 2 años: 75.0 %
+Probabilidad en 3 años: 87.5 %
+Probabilidad en 5 años: 96.9 %
+
+Costo potencial estimado:
+Entre $ 12500000 y $ 37500000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+
+Resultados del análisis:
+
+
+Indice de Exposición Empresarial: 0 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 0 %
+Probabilidad en 2 años: 0 %
+Probabilidad en 3 años: 0 %
+Probabilidad en 5 años: 0 %
+
+Costo potencial estimado:
+Entre $ 0 y $ 0 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+
+Resultados del análisis:
+
+
+Indice de Exposición Empresarial: 0 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 0 %
+Probabilidad en 2 años: 0 %
+Probabilidad en 3 años: 0 %
+Probabilidad en 5 años: 0 %
+
+Costo potencial estimado:
+Entre $ 0 y $ 0 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 http CVE-2012-2582 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+
+Resultados del análisis:
+
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 CVE-2012-2582 → Riesgo: Medio
+192.168.100.8 CVE-1999-1457 → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 50.0 %
+Probabilidad en 2 años: 75.0 %
+Probabilidad en 3 años: 87.5 %
+Probabilidad en 5 años: 96.9 %
+
+Costo potencial estimado:
+Entre $ 12500000 y $ 37500000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 http CVE-2012-2582 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+
+Resultados del análisis:
+
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 CVE-2012-2582 → Riesgo: Medio
+192.168.100.8 CVE-1999-1457 → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 50.0 %
+Probabilidad en 2 años: 75.0 %
+Probabilidad en 3 años: 87.5 %
+Probabilidad en 5 años: 96.9 %
+
+Costo potencial estimado:
+Entre $ 12500000 y $ 37500000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 http CVE-2012-2582 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+
+Resultados del análisis:
+
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 CVE-2012-2582 → Riesgo: Medio
+192.168.100.8 CVE-1999-1457 → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 50.0 %
+Probabilidad en 2 años: 75.0 %
+Probabilidad en 3 años: 87.5 %
+Probabilidad en 5 años: 96.9 %
+
+Costo potencial estimado:
+Entre $ 12500000 y $ 37500000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 http CVE-2012-2582 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+
+Resultados del análisis:
+
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 CVE-2012-2582 → Riesgo: Medio
+192.168.100.8 CVE-1999-1457 → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 50.0 %
+Probabilidad en 2 años: 75.0 %
+Probabilidad en 3 años: 87.5 %
+Probabilidad en 5 años: 96.9 %
+
+Costo potencial estimado:
+Entre $ 12500000 y $ 37500000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 http CVE-2012-2582 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+
+Resultados del análisis:
+
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 CVE-2012-2582 → Riesgo: Medio
+192.168.100.8 CVE-1999-1457 → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 50.0 %
+Probabilidad en 2 años: 75.0 %
+Probabilidad en 3 años: 87.5 %
+Probabilidad en 5 años: 96.9 %
+
+Costo potencial estimado:
+Entre $ 12500000 y $ 37500000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 vmrdp N/A 4.0
+192.168.100.8 http CVE-2012-2582 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+192.168.100.8 vnc-http N/A 4.0
+192.168.100.8 vnc N/A 4.0
+
+Resultados del análisis:
+
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 CVE-2012-2582 → Riesgo: Medio
+192.168.100.8 CVE-1999-1457 → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 80.0 %
+Probabilidad en 2 años: 96.0 %
+Probabilidad en 3 años: 99.2 %
+Probabilidad en 5 años: 100.0 %
+
+Costo potencial estimado:
+Entre $ 20000000 y $ 60000000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
