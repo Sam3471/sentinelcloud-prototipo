@@ -52,7 +52,9 @@
 <div id="eulaModal" class="modal">
     <div class="modal-content">
         <h3>Acuerdo de Licencia de Usuario Final (EULA) y Términos de Servicio</h3>
-        <div class="eula-box">
+        
+        <!-- NUEVO: Agregamos ID y evento onscroll -->
+        <div class="eula-box" id="eulaBox" onscroll="verificarScroll()">
             <p><strong>1. Autorización Explícita:</strong> Al utilizar la plataforma SentinelCloud, usted declara bajo juramento y responsabilidad legal que posee la autorización explícita, escrita y legal para realizar escaneos de vulnerabilidades y auditorías perimetrales sobre la dirección IP o dominio ingresado.</p>
             <p><strong>2. Restricciones de Uso:</strong> Queda estrictamente prohibido el uso de esta herramienta con fines ofensivos, de intrusión no autorizada o explotación maliciosa de activos informáticos ajenos o que no cuenten con un consentimiento formal previo.</p>
             <p><strong>3. Limitación de Responsabilidad:</strong> Los desarrolladores de SentinelCloud no asumen ninguna responsabilidad civil o penal por el mal uso de la plataforma o por daños colaterales derivados de escaneos mal configurados en infraestructuras críticas de terceros.</p>
@@ -60,8 +62,9 @@
         </div>
 
         <div class="checkbox-container">
-            <input type="checkbox" id="aceptoTerminos" onclick="toggleBotonEscanear()">
-            <label for="aceptoTerminos" style="margin-bottom:0; cursor:pointer;">He leído y acepto los Términos y Condiciones, y declaro poseer autorización sobre el objetivo.</label>
+            <!-- NUEVO: El checkbox nace con 'disabled' -->
+            <input type="checkbox" id="aceptoTerminos" disabled onclick="toggleBotonEscanear()">
+            <label for="aceptoTerminos" style="margin-bottom:0; cursor:pointer;">Desplace hasta el final para habilitar y aceptar los Términos y Condiciones.</label>
         </div>
 
         <div style="text-align: right;">
@@ -78,14 +81,30 @@ function abrirModalEULA() {
         alert("Por favor, ingrese una dirección IP o dominio válido antes de continuar.");
         return;
     }
+    
     // Mostrar el modal
     document.getElementById("eulaModal").style.display = "block";
+    
+    // Cada vez que se abre, reiniciamos el scroll arriba y bloqueamos todo de nuevo
+    const box = document.getElementById("eulaBox");
+    box.scrollTop = 0;
+    document.getElementById("aceptoTerminos").checked = false;
+    document.getElementById("aceptoTerminos").disabled = true;
+    document.getElementById("btnConfirmarScan").disabled = true;
 }
 
 function cerrarModal() {
     document.getElementById("eulaModal").style.display = "none";
-    document.getElementById("aceptoTerminos").checked = false;
-    document.getElementById("btnConfirmarScan").disabled = true;
+}
+
+// NUEVA FUNCIÓN: Detecta si el usuario llegó al final de la caja de texto
+function verificarScroll() {
+    const box = document.getElementById("eulaBox");
+    
+    // Evaluamos si la posición actual del scroll + la altura visible alcanza el total del contenido (con 5px de tolerancia)
+    if (box.scrollHeight - box.scrollTop <= box.clientHeight + 5) {
+        document.getElementById("aceptoTerminos").disabled = false;
+    }
 }
 
 function toggleBotonEscanear() {
@@ -94,11 +113,9 @@ function toggleBotonEscanear() {
 }
 
 function ejecutarEscaneoConToken() {
-    // Generar un token único de sesión basado en timestamp y número aleatorio (exigencia del evaluador)
     const tokenSesion = "TOKEN-SEC-" + Math.random().toString(36).substring(2, 10).toUpperCase() + "-" + Date.now();
     console.log("Token de autorización generado:", tokenSesion);
 
-    // Cerrar modal
     cerrarModal();
 
     const ip = document.getElementById("ip").value;
@@ -119,7 +136,6 @@ function ejecutarEscaneoConToken() {
         if (progreso >= 90) clearInterval(intervalo);
     }, 500);
 
-    // Llamada al endpoint backend pasando la IP y el token de autorización
     fetch(`/scan?ip=${ip}&token=${tokenSesion}`)
     .then(res => {
         if (!res.ok) throw new Error("Error HTTP " + res.status);
@@ -131,8 +147,6 @@ function ejecutarEscaneoConToken() {
         estado.innerHTML = "✅ Escaneo completado. Reportes generados y enviados por correo.";
 
         let html = "<div class='resultado-box'><h3>Resultados del Perímetro:</h3>";
-        
-        // CORREGIDO: Se usa "puertos_detectados" que es lo que envía api.py
         if (data.puertos_detectados && data.puertos_detectados.length > 0) {
             data.puertos_detectados.forEach(p => {
                 html += `
