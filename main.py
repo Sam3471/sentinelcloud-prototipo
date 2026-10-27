@@ -6,12 +6,11 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 from motor_ecem import analizar_vulnerabilidades
 from motor_ecem import generar_estadisticas
-from reporte import generar_reporte
 from motor_ecem import calcular_iee
-from enviar_reporte import enviar_reporte
 from motor_ecem import calcular_riesgo_empresarial
 from motor_ecem import proyeccion_incidentes
-from reporte import generar_glosario
+from reporte import generar_reporte
+from enviar_reporte import enviar_reporte
 
 # leer archivo desde CLI
 archivo = sys.argv[1]
@@ -55,17 +54,24 @@ print("Probabilidad en 5 años:", proyeccion["5"],"%")
 print("\nCosto potencial estimado:")
 print("Entre $",costo_min,"y $",costo_max,"CLP")
 
-
 # guardar archivo de análisis
 with open("analisis_ecem.json","w") as f:
     json.dump(resultados,f,indent=4)
 
-# generar reporte PDF
-generar_reporte(resultados, resumen, iee, proyeccion, costo_min, costo_max)
-generar_glosario()
-
-print("\nArchivos generados:")
-print("analisis_ecem.json")
-print("reporte_ecem.pdf")
-print("glosario_ecem.pdf")
-enviar_reporte("samuel.gutierrez3471@gmail.com")
+if __name__ == "__main__":
+    print("\n🔍 Ejecutando orquestador de reportes en la nube (Supabase)...")
+    
+    # Llamamos al orquestador central con los datos reales analizados
+    generar_reporte(
+        resultados, 
+        resumen, 
+        iee, 
+        proyeccion, 
+        costo_min, 
+        costo_max
+    )
+    
+    print("\n✅ ¡Proceso finalizado con éxito! Todos los reportes están listos.")
+    
+    # Envío del correo con los reportes generados
+    enviar_reporte("samuel.gutierrez3471@gmail.com")
