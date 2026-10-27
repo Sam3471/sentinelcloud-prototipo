@@ -1,6 +1,7 @@
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from glosario_ecem import glosario
+from database import obtener_remediacion
 
 def estimar_costos(clientes):
 
@@ -24,6 +25,10 @@ def generar_reporte(vulnerabilidades, resumen, iee, proyeccion, costo_min, costo
 
     generar_reporte_ejecutivo(vulnerabilidades, resumen, iee, proyeccion, costo_min, costo_max)
     generar_reporte_tecnico(vulnerabilidades)
+    generar_glosario()
+    generar_reporte_remediacion(vulnerabilidades)
+
+    print("✅ Todos los reportes (Ejecutivo, Técnico, Glosario y Remediación) han sido generados con éxito.")
 
 
 def generar_reporte_ejecutivo(vulnerabilidades, resumen, iee, proyeccion, costo_min, costo_max):
@@ -251,28 +256,101 @@ def generar_reporte_tecnico(vulnerabilidades):
     c.save()
 
 def generar_glosario():
-
-    from glosario_ecem import glosario
-    from reportlab.lib.pagesizes import letter
-    from reportlab.pdfgen import canvas
-
     c = canvas.Canvas("glosario_ecem.pdf", pagesize=letter)
 
     y = 750
 
-    c.setFont("Helvetica-Bold",16)
-    c.drawString(200,y,"Glosario ECEM")
+    c.setFont("Helvetica-Bold", 16)
+    c.drawString(200, y, "Glosario ECEM")
 
     y -= 40
 
-    c.setFont("Helvetica",11)
+    c.setFont("Helvetica", 11)
 
     for servicio, descripcion in glosario.items():
-
-        c.drawString(50,y,f"{servicio}: {descripcion}")
+        c.drawString(50, y, f"{servicio}: {descripcion}")
 
         y -= 20
 
+        if y < 100:
+            c.showPage()
+            y = 750
+
+    c.save()
+
+def generar_seccion_remediacion(puertos_detectados):
+    """
+    Recibe la lista de puertos detectados por Nmap y consulta en Supabase
+    las guías de remediación específicas para cada servicio.
+    """
+    bloque_remediacion = []
+    
+    for item in puertos_detectados:
+        servicio = item.get('servicio', 'desconocido')
+        puerto = item.get('puerto', 'N/A')
+        
+        # Consulta remota a la nube en Supabase
+        guia = obtener_remediacion(servicio)
+        
+        datos_remediacion = {
+            "puerto": puerto,
+            "servicio": servicio,
+            "titulo": guia["titulo"],
+            "pasos": guia["pasos"],
+            "comando": guia["comando"]
+        }
+        bloque_remediacion.append(datos_remediacion)
+        
+    return bloque_remediacion
+
+def generar_reporte_remediacion(vulnerabilidades):
+    """
+    Genera un documento PDF independiente (o sección) con el manual de remediación 
+    consultando dinámicamente la base de datos remota en Supabase.
+    """
+    c = canvas.Canvas("reporte_remediacion.pdf", pagesize=letter)
+    
+    y = 750
+
+    c.setFont("Helvetica-Bold", 16)
+    c.drawString(150, y, "Manual de Remediación y Mitigación")
+
+    y -= 40
+    c.setFont("Helvetica", 11)
+
+    # Obtenemos los datos procesados mediante tu función conectada a Supabase
+    remediaciones = generar_seccion_remediacion(vulnerabilidades)
+
+    for item in remediaciones:
+        # Título del hallazgo / servicio
+        c.setFont("Helvetica-Bold", 12)
+        c.drawString(50, y, f"Puerto {item['puerto']} ({item['servicio'].upper()}): {item['titulo']}")
+        y -= 20
+
+        # Pasos de mitigación
+        c.setFont("Helvetica-Bold", 10)
+        c.drawString(60, y, "Pasos recomendados:")
+        y -= 15
+
+        c.setFont("Helvetica", 10)
+        for paso in item['pasos'].split('\n'):
+            c.drawString(70, y, f"- {paso}")
+            y -= 15
+            
+            # Control de salto de página si se acaba el espacio
+            if y < 100:
+                c.showPage()
+                y = 750
+                c.setFont("Helvetica", 10)
+
+        y -= 5
+        # Comando de verificación técnica
+        c.setFont("Helvetica-Bold", 10)
+        c.drawString(60, y, f"Comando de verificación: {item['comando']}")
+        
+        y -= 30  # Espacio entre cada remediación
+
+        # Verificamos si queda espacio en la página
         if y < 100:
             c.showPage()
             y = 750
