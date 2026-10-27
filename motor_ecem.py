@@ -36,7 +36,7 @@ def analizar_vulnerabilidades(vulnerabilidades):
 
     return resultados
 
-#Función determinante de riesgo
+# Función determinante de riesgo y estadísticas del sistema
 def generar_estadisticas(resultados):
 
     resumen = {
@@ -46,61 +46,40 @@ def generar_estadisticas(resultados):
         "bajo": 0
     }
 
-    puntaje_total = 0
-
     for r in resultados:
-
         riesgo = r["riesgo"]
 
         if riesgo == "Crítico":
             resumen["critico"] += 1
-            puntaje_total += 100
-
         elif riesgo == "Alto":
             resumen["alto"] += 1
-            puntaje_total += 70
-
         elif riesgo == "Medio":
             resumen["medio"] += 1
-            puntaje_total += 40
-
         else:
             resumen["bajo"] += 1
-            puntaje_total += 10
 
-
-    if len(resultados) == 0:
-        iee = 0
-    else:
-        iee = int(puntaje_total / len(resultados))
-
+    # Delegamos el cálculo del IEE a nuestra función acumulativa y blindada a 100
+    iee = calcular_iee(resultados)
 
     return resumen, iee
 
 #Función cálculo de IEE (Índice de Exposición Empresarial)
 def calcular_iee(vulnerabilidades):
-
-    puntaje = 0
+    puntaje_total = 0
 
     for v in vulnerabilidades:
-
         if v["riesgo"] == "Crítico":
-            puntaje += 10
-
+            puntaje_total += 25  # 4 vulnerabilidades críticas saturarían el sistema a 100
         elif v["riesgo"] == "Alto":
-            puntaje += 7
-
+            puntaje_total += 15  # ~7 vulnerabilidades altas llegan a 100
         elif v["riesgo"] == "Medio":
-            puntaje += 4
-
+            puntaje_total += 10  # 10 vulnerabilidades medias llegan a 100
         else:
-            puntaje += 1
+            puntaje_total += 3   # Vulnerabilidades bajas
 
-    max_puntaje = len(vulnerabilidades) * 10
-
-    iee = (puntaje / max_puntaje) * 100
-
-    return round(iee)
+    # El IEE se blinda para no superar los 100 puntos
+    iee = min(puntaje_total, 100)
+    return int(iee)
 
 def calcular_riesgo_empresarial(resultados):
 

@@ -39,9 +39,9 @@
         {
             "host": "192.168.100.8",
             "servicio": "http",
-            "version": "3.1.6",
+            "version": "3.1.9",
             "puerto": 5000,
-            "cve": "CVE-2012-2582",
+            "cve": "CVE-2012-2213",
             "cvss": 5.0,
             "descripcion": "Servicio http expuesto en puerto 5000"
         },

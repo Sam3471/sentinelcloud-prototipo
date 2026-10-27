@@ -410,3 +410,269 @@ analisis_ecem.json
 reporte_ecem.pdf
 glosario_ecem.pdf
 Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+127.0.0.1 http CVE-2012-2213 5.0
+
+Resultados del análisis:
+
+127.0.0.1 CVE-2012-2213 → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 10.0 %
+Probabilidad en 2 años: 19.0 %
+Probabilidad en 3 años: 27.1 %
+Probabilidad en 5 años: 41.0 %
+
+Costo potencial estimado:
+Entre $ 2500000 y $ 7500000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+127.0.0.1 http CVE-2012-2213 5.0
+
+Resultados del análisis:
+
+127.0.0.1 CVE-2012-2213 → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 10.0 %
+Probabilidad en 2 años: 19.0 %
+Probabilidad en 3 años: 27.1 %
+Probabilidad en 5 años: 41.0 %
+
+Costo potencial estimado:
+Entre $ 2500000 y $ 7500000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+127.0.0.1 http CVE-2012-2213 5.0
+
+Resultados del análisis:
+
+127.0.0.1 CVE-2012-2213 → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 10.0 %
+Probabilidad en 2 años: 19.0 %
+Probabilidad en 3 años: 27.1 %
+Probabilidad en 5 años: 41.0 %
+
+Costo potencial estimado:
+Entre $ 2500000 y $ 7500000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+scanme.nmap.org tcpwrapped N/A 4.0
+scanme.nmap.org tcpwrapped N/A 4.0
+scanme.nmap.org tcpwrapped N/A 4.0
+scanme.nmap.org http CVE-2013-4522 5.0
+scanme.nmap.org rtsp N/A 4.0
+scanme.nmap.org tcpwrapped N/A 4.0
+scanme.nmap.org nping-echo N/A 4.0
+
+Resultados del análisis:
+
+scanme.nmap.org N/A → Riesgo: Medio
+scanme.nmap.org N/A → Riesgo: Medio
+scanme.nmap.org N/A → Riesgo: Medio
+scanme.nmap.org CVE-2013-4522 → Riesgo: Medio
+scanme.nmap.org N/A → Riesgo: Medio
+scanme.nmap.org N/A → Riesgo: Medio
+scanme.nmap.org N/A → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 70.0 %
+Probabilidad en 2 años: 91.0 %
+Probabilidad en 3 años: 97.3 %
+Probabilidad en 5 años: 99.8 %
+
+Costo potencial estimado:
+Entre $ 17500000 y $ 52500000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+scanme.nmap.org tcpwrapped N/A 4.0
+scanme.nmap.org ssh N/A 4.0
+scanme.nmap.org tcpwrapped N/A 4.0
+scanme.nmap.org http CVE-2013-4522 5.0
+scanme.nmap.org rtsp N/A 4.0
+scanme.nmap.org tcpwrapped N/A 4.0
+scanme.nmap.org nping-echo N/A 4.0
+
+Resultados del análisis:
+
+scanme.nmap.org N/A → Riesgo: Medio
+scanme.nmap.org N/A → Riesgo: Medio
+scanme.nmap.org N/A → Riesgo: Medio
+scanme.nmap.org CVE-2013-4522 → Riesgo: Medio
+scanme.nmap.org N/A → Riesgo: Medio
+scanme.nmap.org N/A → Riesgo: Medio
+scanme.nmap.org N/A → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 70.0 %
+Probabilidad en 2 años: 91.0 %
+Probabilidad en 3 años: 97.3 %
+Probabilidad en 5 años: 99.8 %
+
+Costo potencial estimado:
+Entre $ 17500000 y $ 52500000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 vmrdp N/A 4.0
+192.168.100.8 http CVE-2012-2213 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+192.168.100.8 vnc-http N/A 4.0
+192.168.100.8 vnc N/A 4.0
+
+Resultados del análisis:
+
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 CVE-2012-2213 → Riesgo: Medio
+192.168.100.8 CVE-1999-1457 → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 80.0 %
+Probabilidad en 2 años: 96.0 %
+Probabilidad en 3 años: 99.2 %
+Probabilidad en 5 años: 100.0 %
+
+Costo potencial estimado:
+Entre $ 20000000 y $ 60000000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 vmrdp N/A 4.0
+192.168.100.8 http CVE-2012-2213 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+192.168.100.8 vnc-http N/A 4.0
+192.168.100.8 vnc N/A 4.0
+
+Resultados del análisis:
+
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 CVE-2012-2213 → Riesgo: Medio
+192.168.100.8 CVE-1999-1457 → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 80.0 %
+Probabilidad en 2 años: 96.0 %
+Probabilidad en 3 años: 99.2 %
+Probabilidad en 5 años: 100.0 %
+
+Costo potencial estimado:
+Entre $ 20000000 y $ 60000000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
+Vulnerabilidades detectadas:
+
+192.168.100.8 msrpc N/A 4.0
+192.168.100.8 netbios-ssn N/A 4.0
+192.168.100.8 microsoft-ds N/A 4.0
+192.168.100.8 vmrdp N/A 4.0
+192.168.100.8 http CVE-2012-2213 5.0
+192.168.100.8 http CVE-1999-1457 5.0
+192.168.100.8 vnc-http N/A 4.0
+192.168.100.8 vnc N/A 4.0
+
+Resultados del análisis:
+
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 CVE-2012-2213 → Riesgo: Medio
+192.168.100.8 CVE-1999-1457 → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+192.168.100.8 N/A → Riesgo: Medio
+
+Indice de Exposición Empresarial: 40 /100
+
+RIESGO EMPRESARIAL ESTIMADO
+
+Probabilidad de incidente en 1 año: 80.0 %
+Probabilidad en 2 años: 96.0 %
+Probabilidad en 3 años: 99.2 %
+Probabilidad en 5 años: 100.0 %
+
+Costo potencial estimado:
+Entre $ 20000000 y $ 60000000 CLP
+
+Archivos generados:
+analisis_ecem.json
+reporte_ecem.pdf
+glosario_ecem.pdf
+Reporte enviado por correo.
