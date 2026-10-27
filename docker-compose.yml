@@ -1,11 +1,15 @@
- 
+version: '3.8'
 
 services:
-  sentinel-app:
+  sentinelcloud:
     build: .
+    image: sentinelcloud:latest
     container_name: sentinelcloud_app
-    ports:
-      - "5000:5000"
+    # Inyecta automáticamente las variables de entorno desde tu archivo .env local
+    env_file:
+      - .env
+    # Mapea la carpeta local para que los PDFs generados aparezcan directamente en tu equipo
     volumes:
       - .:/app
-    restart: always
+    # Argumento por defecto que recibe el main.py (tu archivo JSON de pruebas)
+    command: ["nmap_scan.json"]

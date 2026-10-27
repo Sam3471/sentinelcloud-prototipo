@@ -1,4 +1,5 @@
 from reportlab.lib.pagesizes import letter
+from reportlab.lib.colors import HexColor
 from reportlab.pdfgen import canvas
 from glosario_ecem import glosario
 from database import obtener_remediacion
@@ -323,7 +324,7 @@ def generar_reporte_remediacion(vulnerabilidades):
 
     for item in remediaciones:
         # Título del hallazgo / servicio
-        c.setFont("Helvetica-Bold", 12)
+        c.setFont("Helvetica-Bold", 11)
         c.drawString(50, y, f"Puerto {item['puerto']} ({item['servicio'].upper()}): {item['titulo']}")
         y -= 20
 
@@ -331,17 +332,18 @@ def generar_reporte_remediacion(vulnerabilidades):
         c.setFont("Helvetica-Bold", 10)
         c.drawString(60, y, "Pasos recomendados:")
         y -= 15
-
+        
         c.setFont("Helvetica", 10)
         for paso in item['pasos'].split('\n'):
-            c.drawString(70, y, f"- {paso}")
-            y -= 15
-            
-            # Control de salto de página si se acaba el espacio
-            if y < 100:
-                c.showPage()
-                y = 750
-                c.setFont("Helvetica", 10)
+            if paso.strip():
+                c.drawString(70, y, f"- {paso.strip()}")
+                y -= 15
+                
+                # Control de salto de página si se acaba el espacio durante los pasos
+                if y < 100:
+                    c.showPage()
+                    y = 750
+                    c.setFont("Helvetica", 10)
 
         y -= 5
         # Comando de verificación técnica
@@ -349,8 +351,8 @@ def generar_reporte_remediacion(vulnerabilidades):
         c.drawString(60, y, f"Comando de verificación: {item['comando']}")
         
         y -= 30  # Espacio entre cada remediación
-
-        # Verificamos si queda espacio en la página
+        
+        # Verificamos si queda espacio en la página para la siguiente remediación
         if y < 100:
             c.showPage()
             y = 750

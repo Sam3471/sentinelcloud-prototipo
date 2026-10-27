@@ -44,6 +44,15 @@ def enviar_reporte(destinatario):
             filename="glosario_ecem.pdf"
         )
 
+    # adjuntar PDF Remediación (Manual desde Supabase)
+    with open("reporte_remediacion.pdf", "rb") as f:
+        msg.add_attachment(
+            f.read(),
+            maintype="application",
+            subtype="pdf",
+            filename="reporte_remediacion.pdf"
+        )
+
     # adjuntar JSON Análisis
     with open("analisis_ecem.json", "rb") as f:
         msg.add_attachment(

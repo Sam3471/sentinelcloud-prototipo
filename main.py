@@ -6,17 +6,18 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 from motor_ecem import analizar_vulnerabilidades
 from motor_ecem import generar_estadisticas
-from motor_ecem import calcular_iee
 from motor_ecem import calcular_riesgo_empresarial
 from motor_ecem import proyeccion_incidentes
 from reporte import generar_reporte
 from enviar_reporte import enviar_reporte
+from database import inicializar_bd
+inicializar_bd()
 
 # leer archivo desde CLI
 archivo = sys.argv[1]
 
 # abrir archivo JSON
-with open(archivo) as f:
+with open(archivo) as f: 
     data = json.load(f)
 
 # obtener lista de vulnerabilidades
