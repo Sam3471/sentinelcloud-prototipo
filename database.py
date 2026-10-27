@@ -64,10 +64,14 @@ def inicializar_bd():
 
             ("mysql", "Base de datos MySQL expuesta directamente a la red (Puerto 3306)", 
              "1. Modifique la directiva 'bind-address' para escuchar solo en localhost/red interna.\n2. Elimine usuarios sin contraseña o   con privilegios excesivos.\n3. Implemente un túnel VPN/SSH para administración remota.", 
+             "nmap -p 3306 --script mysql-info"),
+
+             ("msql", "Base de datos MySQL expuesta directamente a la red (Puerto 3306)", 
+             "1. Modifique la directiva 'bind-address' para escuchar solo en localhost/red interna.\n2. Elimine usuarios sin contraseña o con privilegios excesivos.\n3. Implemente un túnel VPN/SSH para administración remota.", 
              "nmap -p 3306 --script mysql-info")
         ]
         
-        for rem in remediaciones:
+        for rem in remediaciones_iniciales:
             cursor.execute('''
                 INSERT INTO remediaciones (servicio, titulo_problema, pasos_mitigacion, comando_verificacion)
                 VALUES (%s, %s, %s, %s)
@@ -86,17 +90,17 @@ def inicializar_bd():
         print(f"❌ Error al conectar o inicializar la base de datos remota: {e}")
 
 def obtener_remediacion(servicio, puerto=None, host=None):
-    """Consulta la guía de remediación directamente desde la base de datos en la nube."""
+    """Consulta la guía en Supabase y cuenta con un respaldo inteligente garantizado."""
+    srv_lower = str(servicio).lower().strip()
+    
     try:
         conn = obtener_conexion()
         cursor = conn.cursor()
-        
         cursor.execute('''
             SELECT titulo_problema, pasos_mitigacion, comando_verificacion 
             FROM remediaciones 
             WHERE LOWER(servicio) = LOWER(%s)
-        ''', (servicio,))
-        
+        ''', (srv_lower,))
         resultado = cursor.fetchone()
         cursor.close()
         conn.close()
@@ -107,24 +111,30 @@ def obtener_remediacion(servicio, puerto=None, host=None):
                 "pasos": resultado[1],
                 "comando": resultado[2]
             }
-        else:
-            return {
-                "titulo": f"Servicio genérico expuesto ({servicio})",
-                "pasos": "1. Valide la necesidad operativa del servicio.\n2. Aplique segmentación de red y reglas de denegación por defecto en el firewall.",
-                "comando": f"nmap -sV -p [puerto] [objetivo]"
-            }
-        
     except Exception as e:
         print(f"⚠️ Aviso en consulta remota: {e}")
 
-    # Fallback dinámico sin valores duros tipo [puerto]
-    p_str = str(puerto) if puerto else "21/3306"
-    h_str = str(host) if host else "10.0.0.15"
+    # Respaldos inteligentes específicos (Blindaje total para la defensa)
+    if "ftp" in srv_lower:
+        return {
+            "titulo": "Servicio FTP sin cifrar expuesto (Puerto 21)",
+            "pasos": "1. Deshabilite el acceso anónimo en el servidor FTP.\n2. Migre a protocolos seguros como SFTP (SSH) o FTPS.\n3. Restrinja el acceso por IP mediante reglas de firewall perimetral.",
+            "comando": "nmap -p 21 --script ftp-anon"
+        }
+    elif "mysql" in srv_lower or "3306" in srv_lower:
+        return {
+            "titulo": "Base de datos MySQL expuesta directamente a la red (Puerto 3306)",
+            "pasos": "1. Modifique la directiva 'bind-address' para escuchar solo en localhost o redes internas.\n2. Elimine usuarios sin contraseña o con privilegios excesivos.\n3. Implemente un túnel VPN o SSH para administración remota.",
+            "comando": "nmap -p 3306 --script mysql-info"
+        }
 
+    # Fallback general por si entra otro servicio
+    p_str = str(puerto) if puerto else "s/p"
+    h_str = str(host) if host else "objetivo"
     return {
-        "titulo": f"Servicio detectado ({servicio})",
-        "pasos": "1. Verifique la criticidad y el propósito operativo del servicio en el activo.\n2. Aplique el principio de mínimo privilegio restringiendo el acceso por red al puerto asociado.\n3. Actualice el software a la versión con soporte del fabricante.",
-        "comando": f"nmap -sV -p [puerto] [objetivo]"
+        "titulo": f"Servicio detectado ({servicio.upper()})",
+        "pasos": f"1. Verifique la criticidad del puerto {p_str} en el activo {h_str}.\n2. Aplique el principio de mínimo privilegio restringiendo el acceso por red.\n3. Actualice el software a la versión con soporte del fabricante.",
+        "comando": f"nmap -sV -p {p_str} {h_str}"
     }
 
 if __name__ == "__main__":
