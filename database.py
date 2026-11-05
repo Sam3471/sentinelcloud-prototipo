@@ -2,7 +2,7 @@ import os
 import psycopg2
 from dotenv import load_dotenv
 
-# Carga las variables del archivo .env
+# Cargar las variables del archivo .env
 load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
@@ -13,7 +13,7 @@ def obtener_conexion():
         raise ValueError("❌ No se encontró la variable de entorno DATABASE_URL.")
     
     # Si la URL viene completa, podemos usarla directamente o descomponerla de forma segura
-    # Forzamos los parámetros uno a uno para evitar errores de interpretación del host
+    # Forzar los parámetros uno a uno para evitar errores de interpretación del host
     return psycopg2.connect(
         dsn=DATABASE_URL,
         sslmode='require'
@@ -114,7 +114,7 @@ def obtener_remediacion(servicio, puerto=None, host=None):
     except Exception as e:
         print(f"⚠️ Aviso en consulta remota: {e}")
 
-    # Respaldos inteligentes específicos (Blindaje total para la defensa)
+    # Respaldos inteligentes específicos
     if "ftp" in srv_lower:
         return {
             "titulo": "Servicio FTP sin cifrar expuesto (Puerto 21)",

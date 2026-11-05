@@ -1,6 +1,6 @@
 # motor_ecem.py
 
-# Esta función clasifica el nivel de riesgo según el puntaje CVSS
+# Clasificar el nivel de riesgo según el puntaje CVSS
 def calcular_riesgo(cvss):
 
     if cvss >= 9:
@@ -13,7 +13,7 @@ def calcular_riesgo(cvss):
         return "Bajo","Baja"
 
 
-# Esta función analiza todas las vulnerabilidades
+# Analizar todas las vulnerabilidades
 def analizar_vulnerabilidades(vulnerabilidades):
 
     resultados = []
@@ -23,20 +23,23 @@ def analizar_vulnerabilidades(vulnerabilidades):
 
         riesgo, prioridad = calcular_riesgo(v["cvss"])
 
-        # generar ID ECEM estructurada
+        # Generar ID ECEM estructurada
         causa = f"ECEM-{causa_id:03d}"
 
         v["riesgo"] = riesgo
         v["prioridad"] = prioridad
         v["causa"] = causa
 
+        print("DEBUG: Vulnerabilidades cargadas ->", len(vulnerabilidades), "elementos encontrados.")
+
         resultados.append(v)
 
         causa_id += 1
-
+        
     return resultados
 
-# Función determinante de riesgo y estadísticas del sistema
+
+# Determinar riesgo y estadísticas del sistema
 def generar_estadisticas(resultados):
 
     resumen = {
@@ -58,12 +61,12 @@ def generar_estadisticas(resultados):
         else:
             resumen["bajo"] += 1
 
-    # Delegamos el cálculo del IEE a nuestra función acumulativa y blindada a 100
+    # Delegar el cálculo del IEE a la función acumulativa
     iee = calcular_iee(resultados)
 
     return resumen, iee
 
-#Función cálculo de IEE (Índice de Exposición Empresarial)
+# Calcular IEE
 def calcular_iee(vulnerabilidades):
     puntaje_total = 0
 
@@ -77,7 +80,7 @@ def calcular_iee(vulnerabilidades):
         else:
             puntaje_total += 3   # Vulnerabilidades bajas
 
-    # El IEE se blinda para no superar los 100 puntos
+    # Limitar el IEE para no superar los 100 puntos
     iee = min(puntaje_total, 100)
     return int(iee)
 

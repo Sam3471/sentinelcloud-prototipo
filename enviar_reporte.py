@@ -17,7 +17,7 @@ def enviar_reporte(destinatario):
         "Estimado,\n\nAdjunto encontrará el reporte de análisis de vulnerabilidades generado por SentinelCloud.\n\nSaludos."
     )
 
-    # adjuntar PDF ejecutivo
+    # Adjuntar PDF ejecutivo
     with open("reporte_ejecutivo.pdf", "rb") as f:
         msg.add_attachment(
             f.read(),
@@ -26,7 +26,7 @@ def enviar_reporte(destinatario):
             filename="reporte_ejecutivo.pdf"
         )
 
-    # adjuntar PDF técnico
+    # Adjuntar PDF técnico
     with open("reporte_tecnico.pdf", "rb") as f:
         msg.add_attachment(
             f.read(),
@@ -35,7 +35,7 @@ def enviar_reporte(destinatario):
             filename="reporte_tecnico.pdf"
         )
 
-    # adjuntar PDF Glosario
+    # Adjuntar PDF Glosario
     with open("glosario_ecem.pdf", "rb") as f:
         msg.add_attachment(
             f.read(),
@@ -44,7 +44,7 @@ def enviar_reporte(destinatario):
             filename="glosario_ecem.pdf"
         )
 
-    # adjuntar PDF Remediación (Manual desde Supabase)
+    # Adjuntar PDF Remediación (Manual desde Supabase)
     with open("reporte_remediacion.pdf", "rb") as f:
         msg.add_attachment(
             f.read(),
@@ -53,7 +53,7 @@ def enviar_reporte(destinatario):
             filename="reporte_remediacion.pdf"
         )
 
-    # adjuntar JSON Análisis
+    # Adjuntar JSON Análisis
     with open("analisis_ecem.json", "rb") as f:
         msg.add_attachment(
             f.read(),

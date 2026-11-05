@@ -22,3 +22,130 @@ Traceback (most recent call last):
     return codecs.charmap_encode(input,self.errors,encoding_table)[0]
            ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 0: character maps to <undefined>
+Traceback (most recent call last):
+  File "/app/main.py", line 11, in <module>
+    from reporte import generar_reporte
+  File "/app/reporte.py", line 5, in <module>
+    from database import obtener_remediacion
+  File "/app/database.py", line 3, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+Traceback (most recent call last):
+  File "/app/main.py", line 78, in <module>
+    enviar_reporte("samuel.gutierrez3471@gmail.com")
+  File "/app/enviar_reporte.py", line 65, in enviar_reporte
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+  File "/usr/local/lib/python3.10/smtplib.py", line 1050, in __init__
+    SMTP.__init__(self, host, port, local_hostname, timeout,
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 1056, in _get_socket
+    new_socket = super()._get_socket(host, port, timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 836, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/local/lib/python3.10/socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolutionTraceback (most recent call last):
+  File "/app/main.py", line 78, in <module>
+    enviar_reporte("samuel.gutierrez3471@gmail.com")
+  File "/app/enviar_reporte.py", line 65, in enviar_reporte
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+  File "/usr/local/lib/python3.10/smtplib.py", line 1050, in __init__
+    SMTP.__init__(self, host, port, local_hostname, timeout,
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 1056, in _get_socket
+    new_socket = super()._get_socket(host, port, timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 836, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/local/lib/python3.10/socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+Traceback (most recent call last):
+  File "/app/main.py", line 78, in <module>
+    enviar_reporte("samuel.gutierrez3471@gmail.com")
+  File "/app/enviar_reporte.py", line 65, in enviar_reporte
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+  File "/usr/local/lib/python3.10/smtplib.py", line 1050, in __init__
+    SMTP.__init__(self, host, port, local_hostname, timeout,
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 1056, in _get_socket
+    new_socket = super()._get_socket(host, port, timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 836, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/local/lib/python3.10/socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+Traceback (most recent call last):
+  File "/app/main.py", line 78, in <module>
+    enviar_reporte("samuel.gutierrez3471@gmail.com")
+  File "/app/enviar_reporte.py", line 65, in enviar_reporte
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+  File "/usr/local/lib/python3.10/smtplib.py", line 1050, in __init__
+    SMTP.__init__(self, host, port, local_hostname, timeout,
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 1056, in _get_socket
+    new_socket = super()._get_socket(host, port, timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 836, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/local/lib/python3.10/socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+Traceback (most recent call last):
+  File "/app/main.py", line 78, in <module>
+    enviar_reporte("samuel.gutierrez3471@gmail.com")
+  File "/app/enviar_reporte.py", line 65, in enviar_reporte
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+  File "/usr/local/lib/python3.10/smtplib.py", line 1050, in __init__
+    SMTP.__init__(self, host, port, local_hostname, timeout,
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 1056, in _get_socket
+    new_socket = super()._get_socket(host, port, timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 836, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/local/lib/python3.10/socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+Traceback (most recent call last):
+  File "/app/main.py", line 78, in <module>
+    enviar_reporte("samuel.gutierrez3471@gmail.com")
+  File "/app/enviar_reporte.py", line 65, in enviar_reporte
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+  File "/usr/local/lib/python3.10/smtplib.py", line 1050, in __init__
+    SMTP.__init__(self, host, port, local_hostname, timeout,
+  File "/usr/local/lib/python3.10/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.10/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 1056, in _get_socket
+    new_socket = super()._get_socket(host, port, timeout)
+  File "/usr/local/lib/python3.10/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.10/socket.py", line 836, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/local/lib/python3.10/socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution

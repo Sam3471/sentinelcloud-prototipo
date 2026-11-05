@@ -50,9 +50,14 @@ def ejecutar_nmap(ip):
         }
 
     except Exception as e:
+        import traceback
+        error_detallado = traceback.format_exc()
+        print("--- ERROR DETALLADO EN NMAP ---")
+        print(error_detallado)
         return {
             "status": "error",
-            "mensaje": str(e)
+            "mensaje": str(e),
+            "detalle": error_detallado
         }
 
 
@@ -99,7 +104,7 @@ def buscar_cve(servicio, version):
 
 
 # ---------------------------
-# CONVERTIR A FORMATO ECEM
+# CONVERTIR AL FORMATO
 # ---------------------------
 def convertir_a_vulnerabilidades(ip, puertos):
     vulnerabilidades = []
@@ -129,40 +134,39 @@ def convertir_a_vulnerabilidades(ip, puertos):
 # ---------------------------
 @app.route('/scan', methods=['GET'])
 def scan():
+    print("--- [DEBUG] 1. Entrando a /scan ---")
     ip = request.args.get('ip')
+    print(f"--- [DEBUG] 2. IP recibida: {ip} ---")
 
     if not ip:
         return jsonify({"status": "error", "mensaje": "Falta parámetro ip"}), 400
 
     # 1. Ejecutar Nmap
+    print("--- [DEBUG] 3. A punto de ejecutar ejecutar_nmap() ---")
     resultado = ejecutar_nmap(ip)
+    print(f"--- [DEBUG] 4. Resultado de Nmap: {resultado} ---")
 
     if resultado["status"] == "error":
         return jsonify(resultado), 500
 
-    # 2. Convertir a formato ECEM
+    # 2. Convertir al formato
+    print("--- [DEBUG] 5. A punto de convertir a vulnerabilidades ---")
     data_ecem = convertir_a_vulnerabilidades(ip, resultado["puertos_abiertos"])
 
     # 3. Guardar JSON
+    print("--- [DEBUG] 6. Guardando input_ecem.json ---")
     with open("input_ecem.json", "w") as f:
         json.dump(data_ecem, f, indent=4)
 
-    # 4. Ejecutar motor en segundo 
+    # 4. Ejecutar motor en segundo plano
+    print("--- [DEBUG] 7. Lanzando subprocess para main.py ---")
     subprocess.Popen(
         ["python", "main.py", "input_ecem.json"],
         stdout=open("log.txt", "a"),
         stderr=open("error.txt", "a")
-    )   
-    
-    #subprocess.run(["python", "main.py", "input_ecem.json"])
+    ) 
 
-    #subprocess.Popen(
-    #    ["python", "main.py", "input_ecem.json"],
-    #    stdout=subprocess.DEVNULL,
-    #    stderr=subprocess.DEVNULL
-    #)
-
-    # 5. Respuesta rápida al frontend
+    print("--- [DEBUG] 8. Todo OK, respondiendo al frontend ---")
     return jsonify({
         "status": "ok",
         "mensaje": "Escaneo iniciado. Recibirás el reporte por correo.",

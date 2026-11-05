@@ -53,7 +53,7 @@
     <div class="modal-content">
         <h3>Acuerdo de Licencia de Usuario Final (EULA) y Términos de Servicio</h3>
         
-        <!-- NUEVO: Agregamos ID y evento onscroll -->
+        <!-- ID y evento onscroll -->
         <div class="eula-box" id="eulaBox" onscroll="verificarScroll()">
             <p><strong>1. Autorización Explícita:</strong> Al utilizar la plataforma SentinelCloud, usted declara bajo juramento y responsabilidad legal que posee la autorización explícita, escrita y legal para realizar escaneos de vulnerabilidades y auditorías perimetrales sobre la dirección IP o dominio ingresado.</p>
             <p><strong>2. Restricciones de Uso:</strong> Queda estrictamente prohibido el uso de esta herramienta con fines ofensivos, de intrusión no autorizada o explotación maliciosa de activos informáticos ajenos o que no cuenten con un consentimiento formal previo.</p>
@@ -62,7 +62,7 @@
         </div>
 
         <div class="checkbox-container">
-            <!-- NUEVO: El checkbox nace con 'disabled' -->
+            <!-- El checkbox nace con 'disabled' -->
             <input type="checkbox" id="aceptoTerminos" disabled onclick="toggleBotonEscanear()">
             <label for="aceptoTerminos" style="margin-bottom:0; cursor:pointer;">Desplace hasta el final para habilitar y aceptar los Términos y Condiciones.</label>
         </div>
@@ -85,7 +85,7 @@ function abrirModalEULA() {
     // Mostrar el modal
     document.getElementById("eulaModal").style.display = "block";
     
-    // Cada vez que se abre, reiniciamos el scroll arriba y bloqueamos todo de nuevo
+    // Cada vez que se abre, reiniciar el scroll arriba y bloquear todo de nuevo
     const box = document.getElementById("eulaBox");
     box.scrollTop = 0;
     document.getElementById("aceptoTerminos").checked = false;
@@ -97,11 +97,11 @@ function cerrarModal() {
     document.getElementById("eulaModal").style.display = "none";
 }
 
-// NUEVA FUNCIÓN: Detecta si el usuario llegó al final de la caja de texto
+// Detecta si el usuario llegó al final de la caja de texto del EULA
 function verificarScroll() {
     const box = document.getElementById("eulaBox");
     
-    // Evaluamos si la posición actual del scroll + la altura visible alcanza el total del contenido (con 5px de tolerancia)
+    // Evaluar si la posición actual del scroll + la altura visible alcanza el total del contenido (con 5px de tolerancia)
     if (box.scrollHeight - box.scrollTop <= box.clientHeight + 5) {
         document.getElementById("aceptoTerminos").disabled = false;
     }

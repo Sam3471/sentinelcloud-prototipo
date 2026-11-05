@@ -29,6 +29,15 @@
         },
         {
             "host": "192.168.100.8",
+            "servicio": "msrpc",
+            "version": null,
+            "puerto": 1556,
+            "cve": "N/A",
+            "cvss": 4.0,
+            "descripcion": "Servicio msrpc expuesto en puerto 1556"
+        },
+        {
+            "host": "192.168.100.8",
             "servicio": "vmrdp",
             "version": null,
             "puerto": 2179,

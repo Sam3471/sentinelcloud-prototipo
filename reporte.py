@@ -6,7 +6,7 @@ from database import obtener_remediacion
 
 def estimar_costos(clientes):
 
-    # estimación simple basada en escenarios legales
+    # Estimación simple basada en escenarios legales
     multa_base = 2000000 * (clientes/10)
 
     demanda_base = 500000 * clientes
@@ -121,12 +121,12 @@ def generar_reporte_ejecutivo(vulnerabilidades, resumen, iee, proyeccion, costo_
             c.showPage()
             y = 750
 
-    #Verificamos si queda espacio de página
+    # Verificar si queda espacio de página
     if y < 120:
         c.showPage()
         y = 750
 
-    #IEE
+    # IEE
     y -= 30
 
     if iee <= 25:
@@ -178,9 +178,8 @@ def generar_reporte_ejecutivo(vulnerabilidades, resumen, iee, proyeccion, costo_
 
     y -= 30
 
-    #Glosario
-    # NUEVA PAGINA - GLOSARIO
 
+    # Glosario
     c.showPage()
     y = 750
 
@@ -290,7 +289,7 @@ def generar_seccion_remediacion(puertos_detectados):
         servicio = item.get('servicio', 'desconocido')
         puerto = item.get('puerto', 'N/A')
         
-        # Consulta remota a la nube en Supabase
+        # Consultar Supabase
         guia = obtener_remediacion(servicio)
         
         datos_remediacion = {
@@ -319,7 +318,7 @@ def generar_reporte_remediacion(vulnerabilidades):
     y -= 40
     c.setFont("Helvetica", 11)
 
-    # Obtenemos los datos procesados mediante tu función conectada a Supabase
+    # Obtener los datos procesados de Supabase
     remediaciones = generar_seccion_remediacion(vulnerabilidades)
 
     for item in remediaciones:
@@ -339,20 +338,28 @@ def generar_reporte_remediacion(vulnerabilidades):
                 c.drawString(70, y, f"- {paso.strip()}")
                 y -= 15
                 
-                # Control de salto de página si se acaba el espacio durante los pasos
+                # Controlar el salto de página si se acaba el espacio durante los pasos
                 if y < 100:
                     c.showPage()
                     y = 750
                     c.setFont("Helvetica", 10)
 
         y -= 5
-        # Comando de verificación técnica
+        # Obtener el objetivo (puede ser IP o un dominio como scanme.nmap.org) y el puerto de forma segura
+        objetivo_actual = item.get('ip') or item.get('objetivo') or '127.0.0.1'
+        puerto_actual = str(item.get('puerto', '5000'))
+        
+        # Tomar el comando de Supabase y reemplazar los comodines dinámicamente
+        comando_base = item.get('comando_verificacion', 'nmap -sV -p {puerto} {objetivo}')
+        comando_dinamico = comando_base.replace('{puerto}', puerto_actual).replace('{objetivo}', str(objetivo_actual))
+
+        # Comando de verificación técnica impreso correctamente en el PDF
         c.setFont("Helvetica-Bold", 10)
-        c.drawString(60, y, f"Comando de verificación: {item['comando']}")
+        c.drawString(60, y, f"Comando de verificación: {comando_dinamico}")
         
         y -= 30  # Espacio entre cada remediación
         
-        # Verificamos si queda espacio en la página para la siguiente remediación
+        # Verificar si queda espacio en la página para la siguiente remediación
         if y < 100:
             c.showPage()
             y = 750

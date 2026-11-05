@@ -13,26 +13,26 @@ from enviar_reporte import enviar_reporte
 from database import inicializar_bd
 inicializar_bd()
 
-# leer archivo desde CLI
+# Leer archivo desde CLI
 archivo = sys.argv[1]
 
-# abrir archivo JSON
+# Abrir archivo JSON
 with open(archivo) as f: 
     data = json.load(f)
 
-# obtener lista de vulnerabilidades
+# Obtener lista de vulnerabilidades
 vulnerabilidades = data["vulnerabilidades"]
 
-# mostrar vulnerabilidades cargadas
+# Mostrar vulnerabilidades cargadas
 print("Vulnerabilidades detectadas:\n")
 
 for v in vulnerabilidades:
     print(v["host"], v["servicio"], v["cve"], v["cvss"])
 
-# analizar vulnerabilidades con el motor ECEM
+# Analizar vulnerabilidades con el motor ECEM
 resultados = analizar_vulnerabilidades(vulnerabilidades)
 
-# generar estadísticas del sistema
+# Generar estadísticas del sistema
 resumen, iee = generar_estadisticas(resultados)
 
 prob_anual, costo_min, costo_max = calcular_riesgo_empresarial(resultados)
@@ -41,7 +41,7 @@ proyeccion = proyeccion_incidentes(prob_anual)
 print("\nResultados del análisis:\n")
 
 for r in resultados:
-    print(r["host"], r["cve"], "→ Riesgo:", r["riesgo"])
+    print(r["host"], r["cve"], "-> Riesgo:", r["riesgo"])
 
 print("\nIndice de Exposición Empresarial:", iee, "/100")
 
@@ -55,7 +55,7 @@ print("Probabilidad en 5 años:", proyeccion["5"],"%")
 print("\nCosto potencial estimado:")
 print("Entre $",costo_min,"y $",costo_max,"CLP")
 
-# guardar archivo de análisis
+# Guardar archivo de análisis
 with open("analisis_ecem.json","w") as f:
     json.dump(resultados,f,indent=4)
 
@@ -74,5 +74,5 @@ if __name__ == "__main__":
     
     print("\n✅ ¡Proceso finalizado con éxito! Todos los reportes están listos.")
     
-    # Envío del correo con los reportes generados
+    # Enviar del correo con los reportes generados
     enviar_reporte("samuel.gutierrez3471@gmail.com")

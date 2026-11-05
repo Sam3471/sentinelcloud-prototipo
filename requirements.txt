@@ -1,4 +1,6 @@
+flask
+requests
 reportlab
+psycopg2-binary
 supabase
 python-dotenv
-psycopg2-binary
